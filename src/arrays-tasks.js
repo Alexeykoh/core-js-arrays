@@ -40,10 +40,8 @@ function getIntervalArray(start, end) {
 function sumArrays(arr1, arr2) {
   const arrays = [arr1, arr2].sort((a, b) => b.length - a.length);
   const res = arrays[0].map((a, ind) => {
-    console.log(a);
     return a + (arrays[1][ind] || 0);
   }, 0);
-  console.log('res', res);
   return res;
 }
 
