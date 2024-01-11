@@ -17,11 +17,11 @@
  * @example
  *    getIntervalArray(1, 5)  => [ 1, 2, 3, 4, 5 ]
  *    getIntervalArray(-2, 2)  => [ -2, -1, 0, 1, 2 ]
- *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
+ *    getIntervalArray(0, 100)` => [ 0, 1, 2, ..., 100 ]
  *    getIntervalArray(3, 3) => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  return Array.from({ length: end - start + 1 }, (v, i) => start + i);
 }
 
 /**
@@ -37,8 +37,14 @@ function getIntervalArray(/* start, end */) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  const arrays = [arr1, arr2].sort((a, b) => b.length - a.length);
+  const res = arrays[0].map((a, ind) => {
+    console.log(a);
+    return a + (arrays[1][ind] || 0);
+  }, 0);
+  console.log('res', res);
+  return res;
 }
 
 /**
